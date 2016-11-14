@@ -1,5 +1,6 @@
 package com.example.caoych.tp_google_map;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void jumpToMap(View view) {
-        // TODO : Communication entre MainActivy et MapsActivity
+        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+        intent.putExtra("zoom", swZoom.isChecked());
+        intent.putExtra("rotate", swRotate.isChecked());
+
+        startActivity(intent);
     }
 }
 
